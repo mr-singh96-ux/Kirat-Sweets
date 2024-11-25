@@ -1,0 +1,154 @@
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100; /* Ensure hamburger is always on top */
+}
+
+.line {
+    height: 4px;
+    background-color: black;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* Menu */
+.menu {
+    display: none; /* Initially hide the menu */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white;
+    padding-top: 60px;
+    z-index: 99; /* Menu should be below hamburger */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.menu ul li {
+    margin: 6px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+/* Animation for showing the menu */
+.menu.show {
+    display: block;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%); /* Starts from the bottom (out of the screen) */
+    }
+    to {
+        transform: translateY(0); /* Ends at its original position (0% is its normal position) */
+    }
+}
+/* Hamburger to 'X' icon (optional animation) */
+.hamburger-menu.active .line:nth-child(1) {
+    transform: rotate(35deg);
+    top: 20px;
+    background-color: white;
+}
+
+.hamburger-menu.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .line:nth-child(3) {
+    transform: rotate(150deg);
+    top: 8px;
+    background-color: white;
+           
+}
+.pbar {
+    display:list-item;
+    justify-content: right;
+    padding:8px 15px;
+    margin-top:-5px;
+    margin-right:20px;
+    text-decoration:none;
+}
+.pbar button {
+    color: white;
+    background-color: orange;
+    height: 65px;
+    width: 150px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    border: none;
+    padding: 8px;
+    margin: 0;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.pbar button:hover {
+    background-color: darkorange;
+    transform: scale(1.05);}
+    .chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #f2c94c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    }
+    .chatbot-icon img {
+        width: 30px;
+       height: 30px;
+   }
+   .chatbot-modal {
+       display: none;
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 25%;
+       height: 100%;
+       background-color: white;
+       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+       z-index: 2000;
+       padding: 20px;
+       overflow: auto;
+   }
+   .overlay {
+       display: none;
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(0, 0, 0, 0.5);
+       z-index: 1000;
+   }

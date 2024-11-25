@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book A Table - Kirat Sweets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kay+Pho+Du:wght@500;600&family=Oswald:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="menu" id="menu">
+    <ul>
+        <div class="pbar"><li><button onclick="navigateTo('home.html')">Home</button>
+            <li><button onclick="navigateTo('menu.html')">Menu</button>
+        <li><button onclick="navigateTo('about.html')">About Us</button>
+        <li><button onclick="navigateTo('events.html')">Events</button>
+        <li><button onclick="navigateTo('blogs.html')">Blog</button>
+            <li><button onclick="navigateTo('gallery.html')">Gallery</button>
+        <li><button onclick="navigateTo('contact.html')">Contact Us</button>
+            <li><button onclick="navigateTo('faq.html')">FAQ's</button>
+        <li><button onclick="navigateTo('feedback.html')">Feedback</button></div>
+        </ul>
+        </nav>
+    <header>Book A Table - Kirat Sweets</header>
+    <div class="content">
+        <div class="images-container">
+            <img src="Brown Flat Illustrative Chef Restaurant Logo.gif" alt="Chef Logo">
+            <img src="Kirat Sweets.jpg" alt="Kirat Sweets Restaurant">
+            <img src="https://ideogram.ai/assets/progressive-image/balanced/response/iPxH_RkATf-7zX247Jkduw" alt="Interior Image">
+        </div>
+        <div class="button-container">
+            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf9Bx7P9UAhGS5zylZ4MM8fQV5jYe4JR0lNxN5bh_CDuKvzgg/viewform?usp=sf_link', '_blank')">
+                Book A Table Now
+            </button>
+            <!-- <button onclick="window.open('https://wa.me/+918968618061?text=Hello!%20I%20would%20like%20to%20inquire%20about%20booking%20a%20table%20at%20Kirat%20Sweets.', '_blank');">
+                Contact Us on WhatsApp
+            </button> -->
+            <div class="WhatsApp">For booking related queries please feel free to <a href="https://wa.me/+918968618061?text=Hello!%20I%20would%20like%20to%20inquire%20about%20booking%20a%20table%20at%20Kirat%20Sweets" target="_blank" style="text-decoration: none; color: #1f9a23; font-weight: 850;">Contact Us On WhatsApp!</a></div>
+        </div>
+        <div class="marquee-container">
+            <marquee scrollamount="10">
+                Our doors are open every day from 6:00 AM to 10:00 PM. Don't forget to clock in and out during these hours!
+            </marquee>
+        </div>
+
+        <!-- Chatbot Icon -->
+        <div class="chatbot-icon" onclick="toggleChatbot()">
+            <img src="https://img.icons8.com/ios-filled/50/000000/chat.png" alt="Chat Icon"/>
+        </div>
+
+        <!-- Chatbot Modal -->
+        <div class="overlay" id="overlay" onclick="toggleChatbot()"></div>
+        <div class="chatbot-modal" id="chatbotModal">
+            <h2>Chat with Us!</h2>
+            <iframe
+                allow="microphone;"
+                width="100%"
+                height="590"
+                style="border: none; border-radius: 8px;"
+                src="https://console.dialogflow.com/api-client/demo/embedded/3a074787-2f24-469a-91ff-6adc0e24cfc8">
+            </iframe>
+        </div>
+
+        <!-- Floating Order Now Button -->
+        <button class="order-now" onclick="navigateTo('online_order.html')">
+            Order Meal
+        </button>
+    </div>
+
+    <script>
+        function toggleChatbot() {
+            const modal = document.getElementById('chatbotModal');
+            const overlay = document.getElementById('overlay');
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+                overlay.style.display = "none";
+            } else {
+                modal.style.display = "block";
+                overlay.style.display = "block";
+            }
+        }
+    </script>
+    <script src="mainmenu.js"></script>
+    <script>
+        function navigateTo(page){window.location.href = page;}
+    </script>
+    <script type="module">
+        // Firebase Authentication Setup
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+    
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBag3dZ3-Ivgq1etvwvIzH2qMEUNo0dvMw",
+            authDomain: "kirat-sweets-and-dairy-9c93a.firebaseapp.com",
+            projectId: "kirat-sweets-and-dairy-9c93a",
+            storageBucket: "kirat-sweets-and-dairy-9c93a.appspot.com",
+            messagingSenderId: "270432947177",
+            appId: "1:270432947177:web:4d8c6f601282098ae4e631",
+            measurementId: "G-4M5NGKY9PH"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+    
+        // Listen for authentication state changes
+        onAuthStateChanged(auth, (user) => {
+            const userCircle = document.getElementById("user-circle");
+            const userInitialElement = document.getElementById("user-initial");
+            const userInfo = document.getElementById("user-info");
+            const signInButton = document.getElementById("sign-in");
+            const signUpButton = document.getElementById("sign-up");
+    
+            if (user) {
+                // Get the user's name from the displayName (if available), otherwise use a fallback
+                const userName = user.displayName || user.email.split('@')[0];  // Default to the part of email before '@'
+                const userEmail = user.email;  // Get the user's email
+    
+                // Generate initials from the name
+                const userInitial = userName.charAt(0).toUpperCase() + (userName.charAt(userName.length - 1) || '').toUpperCase();
+                
+                userInitialElement.textContent = userInitial;  // Set the user initials
+                userCircle.style.display = 'block';  // Show the user circle
+                userInfo.style.display = 'none'; // Hide user info until circle is clicked
+                userCircle.onclick = function() {
+                    // Toggle the visibility of user info when circle is clicked
+                    if (userInfo.style.display === 'none') {
+                        userInfo.style.display = 'block';
+                    } else {
+                        userInfo.style.display = 'none';
+                    }
+                };
+    
+                // Set the user's name and email in the user info
+                document.getElementById('user-name').textContent = userName;  // Set the user name
+                document.getElementById('user-email').textContent = userEmail;  // Set the user email
+    
+                // Hide sign-in and sign-up buttons when logged in
+                signInButton.style.display = "none";
+                signUpButton.style.display = "none";
+            } else {
+                // Hide the user circle when not logged in
+                userCircle.style.display = 'none';  
+    
+                // Show sign-in and sign-up buttons when not logged in
+                signInButton.style.display = "inline-block";
+                signUpButton.style.display = "inline-block";
+            }
+        });
+    
+        // Function to log out
+        function logout() {
+            signOut(auth).then(() => {
+                console.log("User signed out");
+                window.location.href = 'home.html'; // Optional: Redirect after sign-out
+            }).catch((error) => {
+                console.error("Error signing out: ", error);
+            });
+        }
+    
+        // Add logout functionality when page loads
+        window.onload = () => {
+            const logoutButton = document.getElementById("logout");
+            if (logoutButton) {
+                logoutButton.addEventListener("click", logout); // Add event listener to logout button
+            }
+        };
+    </script>
+</body>
+</html>
