@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<head>  
+<link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>FAQ's-Kirat Sweets And Dairy</title>
+    <style>
+        /* .kbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
+    background-color:#2a91fe;
+}
+
+.kbar button {
+    color: orange;
+    border: 3px solid orange;
+    padding: 8px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 50px; 
+    width: 125px; 
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1;
+    font-family: "Old Standard TT", serif;
+    font-weight:bold;
+}
+
+.kbar button:hover {
+    background-color: orange;
+    color: white; 
+    transform: scale(1.2);
+}
+
+.kbar button:before {
+    transition: 0.35s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: orange ;
+    border: 3px solid white;
+    z-index:-1;
+    border-radius: 10px;
+}
+
+.kbar button:hover:before,
+.kbar button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;   
+} */
+.faq{
+font-size: 30px;
+margin-left: 5%;
+}
+/* .chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f2c94c;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .chatbot-icon img {
+             width: 30px;
+            height: 30px;
+        }
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            padding: 20px;
+            overflow: auto;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        } */
+    </style>
+</head>
+<body>
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="menu" id="menu">
+        <div id="user-circle" 
+                    style="display:none; margin-top:-5%; margin-left: 37%; background-color: #ff6600; color: white; width: 60px; height: 60px; border-radius: 50%; font-size: 30px; justify-content: center; align-items: center; text-align: center; padding: 5px; line-height: 55px;"><span id="user-initial"></span></div>
+                <!-- User Info Dropdown -->
+                <div id="user-info" style="display:none; position: absolute; top: 15%; right: 15px; background-color: #fff; border: 1px solid #ccc; padding: 10px; border-radius: 8px; width: 220px;">
+                    <p><strong style="color: black;">Name:</strong> <span id="user-name" style="color: black;"></span></p>
+                    <p><strong style="color: black;">Email:</strong> <span id="user-email" style="color: black;"></span></p>
+                    <button id="logout" style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Sign Out</button>
+                </div>
+    <ul>
+        <div class="pbar"><li><button id="sign-in" onclick="navigateTo('login.html')">Sign-In</button></li>
+            <li><button id="sign-up" onclick="navigateTo('signup.html')">Sign-Up</button></li>
+        <li><button onclick="navigateTo('about.html')">About Us</button>
+        <li><button onclick="navigateTo('reservations.html')">Book A Table</button>
+        <li><button onclick="navigateTo('Contact.html')">Contact Us</button>
+        <li><button onclick="navigateTo('events.html')">Events</button>
+        <li><button onclick="navigateTo('gallery.html')">Gallery</button>
+        <li><button onclick="navigateTo('contact.html')">Contact Us</button>
+        <li><button onclick="navigateTo('feedback.html')">Feedback</button></div>
+        </ul>
+        </nav><div style="color:black; padding:0;">
+<script>
+    function navigateTo(page){window.location.href = page;}
+</script><div class= "heading">
+<h1><b><big>FAQ's</big></b><br>
+<b>Frequently Asked Question's</b> </h1></div><br>
+
+<div class="faq">
+<b> 1. How do I make a reservation?</b>
+        <p>You can make a reservation through our website or by calling our restaurant directly.</p>
+        <b>2. Are their any extra  charges for making the reservation?</b>
+        <p>Yes, the process of reservation is chargeable.</p>
+        <b>3. Can I modify my reservation?</b>
+        <p>Yes, you can modify your reservation by contacting us directly.</p>
+    <b>4. Do you accept walk-ins?</b>
+        <p>Yes, we welcome walk-ins, but reservations are recommended during peak hours.</p>
+    <b>5. What is the cancellation policy?</b>
+            <p>You can cancel your reservation up to 24 hours in advance without any charge.</p> 
+    <b>6. How far in advance can i make a reservation?</b>
+        <p>You can make a reservation upto 3 months in advance.</p>
+    </div><div class="chatbot-icon" onclick="toggleChatbot()">
+        <img src="https://img.icons8.com/ios-filled/50/000000/chat.png" alt="Chat Icon"/>
+    </div>
+    
+    <div class="overlay" id="overlay" onclick="toggleChatbot()"></div>
+    
+    <div class="chatbot-modal" id="chatbotModal">
+        <h2>Chat with Us!</h2>
+        <iframe
+            allow="microphone;"
+            width="100%"
+            height="590"
+            style="border: none; border-radius: 8px;"
+            src="https://console.dialogflow.com/api-client/demo/embedded/3a074787-2f24-469a-91ff-6adc0e24cfc8">
+        </iframe>
+    </div>
+    
+    <script>
+        function toggleChatbot() {
+            const modal = document.getElementById('chatbotModal');
+            const overlay = document.getElementById('overlay');
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+                overlay.style.display = "none";
+            } else {
+                modal.style.display = "block";
+                overlay.style.display = "block";
+            }
+        }
+    </script>
+    <script src="mainmenu.js"></script>
+    <script type="module">
+        // Firebase Authentication Setup
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+    
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBag3dZ3-Ivgq1etvwvIzH2qMEUNo0dvMw",
+            authDomain: "kirat-sweets-and-dairy-9c93a.firebaseapp.com",
+            projectId: "kirat-sweets-and-dairy-9c93a",
+            storageBucket: "kirat-sweets-and-dairy-9c93a.appspot.com",
+            messagingSenderId: "270432947177",
+            appId: "1:270432947177:web:4d8c6f601282098ae4e631",
+            measurementId: "G-4M5NGKY9PH"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+    
+        // Listen for authentication state changes
+        onAuthStateChanged(auth, (user) => {
+            const userCircle = document.getElementById("user-circle");
+            const userInitialElement = document.getElementById("user-initial");
+            const userInfo = document.getElementById("user-info");
+            const signInButton = document.getElementById("sign-in");
+            const signUpButton = document.getElementById("sign-up");
+    
+            if (user) {
+                // Get the user's name from the displayName (if available), otherwise use a fallback
+                const userName = user.displayName || user.email.split('@')[0];  // Default to the part of email before '@'
+                const userEmail = user.email;  // Get the user's email
+    
+                // Generate initials from the name
+                const userInitial = userName.charAt(0).toUpperCase() + (userName.charAt(userName.length - 1) || '').toUpperCase();
+                
+                userInitialElement.textContent = userInitial;  // Set the user initials
+                userCircle.style.display = 'block';  // Show the user circle
+                userInfo.style.display = 'none'; // Hide user info until circle is clicked
+                userCircle.onclick = function() {
+                    // Toggle the visibility of user info when circle is clicked
+                    if (userInfo.style.display === 'none') {
+                        userInfo.style.display = 'block';
+                    } else {
+                        userInfo.style.display = 'none';
+                    }
+                };
+    
+                // Set the user's name and email in the user info
+                document.getElementById('user-name').textContent = userName;  // Set the user name
+                document.getElementById('user-email').textContent = userEmail;  // Set the user email
+    
+                // Hide sign-in and sign-up buttons when logged in
+                signInButton.style.display = "none";
+                signUpButton.style.display = "none";
+            } else {
+                // Hide the user circle when not logged in
+                userCircle.style.display = 'none';  
+    
+                // Show sign-in and sign-up buttons when not logged in
+                signInButton.style.display = "inline-block";
+                signUpButton.style.display = "inline-block";
+            }
+        });
+    
+        // Function to log out
+        function logout() {
+            signOut(auth).then(() => {
+                console.log("User signed out");
+                window.location.href = 'home.html'; // Optional: Redirect after sign-out
+            }).catch((error) => {
+                console.error("Error signing out: ", error);
+            });
+        }
+    
+        // Add logout functionality when page loads
+        window.onload = () => {
+            const logoutButton = document.getElementById("logout");
+            if (logoutButton) {
+                logoutButton.addEventListener("click", logout); // Add event listener to logout button
+            }
+        };
+    </script>
+</body>
+</html>
