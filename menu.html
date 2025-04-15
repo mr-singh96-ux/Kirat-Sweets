@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu-Kirat Sweets And Dairy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kay+Pho+Du:wght@400;500;600;700&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <!-- <style>
+        /*.kbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 4px solid black;
+            background-color: white;
+        }
+        .kbar button {
+            color: white;
+            background-color: orange;
+            border: none;
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .kbar .text{
+            flex:1;
+            text-align: left;
+        }
+        .kbar button:hover {
+            background-color: darkorange;
+            transform: scale(1.05);}*/
+            .kbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
+    background-color:#2a91fe;
+}
+
+.kbar button {
+    color: orange;
+    border: 3px solid orange;
+    padding: 8px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 50px; 
+    width: 100px; 
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1;
+    font-family: "Old Standard TT", serif;
+    font-weight:bold;
+}
+
+.kbar button:hover {
+    background-color: orange;
+    color: white; 
+    transform: scale(1.2);
+}
+
+.kbar button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: orange ;
+    border: 3px solid white;
+    z-index:-1;
+    border-radius: 10px;
+}
+
+.kbar button:hover:before,
+.kbar button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;   
+}
+#a4{color:white;font-size: 45px; font-family: "Noto Serif", serif; font-weight: bold; text-shadow:2px 4px 4px black;}
+.chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f2c94c;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .chatbot-icon img {
+             width: 30px;
+            height: 30px;
+        }
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            padding: 20px;
+            overflow: auto;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+</style> -->
+</head>
+
+<body>
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="menu" id="menu">
+        <button id="closeBtn" style="display: none;">✕</button>
+        <ul>
+            <div id="user-circle"
+                style="display:none; margin-top: 20px;  background-color: #00c9c8; color: black; width: 60px; height: 60px; border-radius: 50%; font-size: 30px; justify-items: center; align-items: center; text-align: center; padding: 5px; line-height: 51px; margin-left: 37%; margin-bottom: 3%;">
+                <span id="user-initial"></span></div>
+            <!-- User Info Dropdown -->
+            <div id="user-info"
+                style="display:none; position: absolute; top: 18%; right: 15px; background-color: #fff; border: 1px solid #ccc; padding: 10px; border-radius: 8px; width: 200px;">
+                <p><strong style="color: black;">Name:</strong> <span id="user-name" style="color: black;"></span></p>
+                <p><strong style="color: black;">Email:</strong> <span id="user-email" style="color: black;"></span></p>
+                <button id="logout"
+                    style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Sign
+                    Out</button>
+            </div>
+            <div class="pbar">
+                <li><button id="sign-in" onclick="navigateTo('login.html')">Sign-In</button></li>
+                <li><button id="sign-up" onclick="navigateTo('signup.html')">Sign-Up</button></li>
+                <li><button onclick="navigateTo('home.html')">Home</button>
+                <li><button onclick="navigateTo('about.html')">About Us</button>
+                <li><button onclick="navigateTo('blogs.html')">Blogs</button>
+                <li><button onclick="navigateTo('events.html')">Upcoming</button>
+                <li><button onclick="navigateTo('online_order.html')">Delivery</button>
+                <li><button onclick="navigateTo('reservations.html')">Dine-In</button>
+                <li><button onclick="navigateTo('gallery.html')">Gallery</button>
+                <li><button onclick="navigateTo('contact.html')">Contact Us</button>
+                    <li><button onclick="window.location.href='https://kirat-sweets-blog.onrender.com/'">Feedback</button>
+                <li><button onclick="navigateTo('faq.html')">FAQ's</button>
+
+            </div>
+        </ul>
+    </nav>
+    <div style="color:orange; padding:0; margin-top:0">
+        <script>
+            function navigateTo(page) { window.location.href = page; }
+        </script>
+        <div class="image">
+            <img src="Kirat Sweets Menu.jpeg" style="margin:0; padding:80px; margin-top: -40px;"></img>
+            <img src="Sahni Dairy Menu.jpeg" style="margin:0; padding:80px; float:right; margin-top: -40px;"></img>
+            <!-- <div class="kbar">
+            <button class="home" onclick="navigateTo('home.html')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg><br>Home</button>
+            <button class="home" onclick="navigateTo('menu.html')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z"/></svg><br>Menu</span></button>
+            
+            <button class="home book-a-table" onclick="navigateTo('reservations.html')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M320-200h60v-270q26-8 43-28.5t17-49.5v-152q0-8-6-14t-14-6q-8 0-14 6t-6 14v100h-30v-100q0-8-6-14t-14-6q-8 0-14 6t-6 14v100h-30v-100q0-8-6-14t-14-6q-8 0-14 6t-6 14v152q0 29 17 49.5t43 28.5v270Zm240 0h60v-254q33-16 51.5-51t18.5-82q0-57-28.5-95T590-720q-43 0-71.5 38T490-587q0 47 18.5 82t51.5 51v254ZM160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm0 0v-640 640Z"/></svg><br>Book A Table</button>
+            
+            <button class="home" onclick="navigateTo('blogs.html')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520ZM200-600h160v-160H200v160Zm400 0h160v-160H600v160Zm0 400h160v-160H600v160Zm-400 0h160v-160H200v160Zm400-400Zm0 240Zm-240 0Zm0-240Z"/></svg><br>Blogs</button>
+            <button class="home" onclick="navigateTo('faq.html')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M560-360q17 0 29.5-12.5T602-402q0-17-12.5-29.5T560-444q-17 0-29.5 12.5T518-402q0 17 12.5 29.5T560-360Zm-30-128h60q0-29 6-42.5t28-35.5q30-30 40-48.5t10-43.5q0-45-31.5-73.5T560-760q-41 0-71.5 23T446-676l54 22q9-25 24.5-37.5T560-704q24 0 39 13.5t15 36.5q0 14-8 26.5T578-596q-33 29-40.5 45.5T530-488ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg><br>FAQ</button></div>-->
+        </div>
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+        <df-messenger intent="WELCOME" chat-title="SweetBot" agent-id="3a074787-2f24-469a-91ff-6adc0e24cfc8"
+            language-code="en"></df-messenger>
+    </div>
+    <script src="mainmenu.js"></script>
+    <script type="module">
+        // Firebase Authentication Setup
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBag3dZ3-Ivgq1etvwvIzH2qMEUNo0dvMw",
+            authDomain: "kirat-sweets-and-dairy-9c93a.firebaseapp.com",
+            projectId: "kirat-sweets-and-dairy-9c93a",
+            storageBucket: "kirat-sweets-and-dairy-9c93a.appspot.com",
+            messagingSenderId: "270432947177",
+            appId: "1:270432947177:web:4d8c6f601282098ae4e631",
+            measurementId: "G-4M5NGKY9PH"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Listen for authentication state changes
+        onAuthStateChanged(auth, (user) => {
+            const userCircle = document.getElementById("user-circle");
+            const userInitialElement = document.getElementById("user-initial");
+            const userInfo = document.getElementById("user-info");
+            const signInButton = document.getElementById("sign-in");
+            const signUpButton = document.getElementById("sign-up");
+
+            if (user) {
+                // Get the user's name from the displayName (if available), otherwise use a fallback
+                const userName = user.displayName || user.email.split('@')[0];  // Default to the part of email before '@'
+                const userEmail = user.email;  // Get the user's email
+
+                // Generate initials from the name
+                const userInitial = userName.charAt(0).toUpperCase() + (userName.charAt(userName.length - 1) || '').toUpperCase();
+
+                userInitialElement.textContent = userInitial;  // Set the user initials
+                userCircle.style.display = 'block';  // Show the user circle
+                userInfo.style.display = 'none'; // Hide user info until circle is clicked
+                userCircle.onclick = function () {
+                    // Toggle the visibility of user info when circle is clicked
+                    if (userInfo.style.display === 'none') {
+                        userInfo.style.display = 'block';
+                    } else {
+                        userInfo.style.display = 'none';
+                    }
+                };
+
+                // Set the user's name and email in the user info
+                document.getElementById('user-name').textContent = userName;  // Set the user name
+                document.getElementById('user-email').textContent = userEmail;  // Set the user email
+
+                // Hide sign-in and sign-up buttons when logged in
+                signInButton.style.display = "none";
+                signUpButton.style.display = "none";
+            } else {
+                // Hide the user circle when not logged in
+                userCircle.style.display = 'none';
+
+                // Show sign-in and sign-up buttons when not logged in
+                signInButton.style.display = "inline-block";
+                signUpButton.style.display = "inline-block";
+            }
+        });
+
+        // Function to log out
+        function logout() {
+            signOut(auth).then(() => {
+                console.log("User signed out");
+                window.location.href = 'home.html'; // Optional: Redirect after sign-out
+            }).catch((error) => {
+                console.error("Error signing out: ", error);
+            });
+        }
+
+        // Add logout functionality when page loads
+        window.onload = () => {
+            const logoutButton = document.getElementById("logout");
+            if (logoutButton) {
+                logoutButton.addEventListener("click", logout); // Add event listener to logout button
+            }
+        };
+    </script>
+</body>
+
+</html>

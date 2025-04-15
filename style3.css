@@ -1,0 +1,488 @@
+/* Overall container for the text */
+.bookings-container {
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0 auto;
+    text-align: center;
+}
+
+/* Text style */
+.bookings-text {
+    width: 800px;
+    height: 100px;
+    font-size: 70px; 
+    font-weight: 900;
+    color: #f7c1ff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding: 30px 40px;
+    border-radius: 20px;
+    position: relative;
+    background: linear-gradient(45deg, #ff33cc, #9933cc, #3366cc);
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Create 3D shadow effect when hovering */
+.bookings-text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Animation for gradient shifting */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .bookings-text {
+        font-size: 50px;
+        padding: 20px 30px;
+    }
+}
+button {
+    color: rgb(245, 34, 34);
+    margin-top: -20px;
+    padding:25px;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1;
+    font-family: "Old Standard TT", serif;
+    font-weight:bold;
+    border: white;
+    border: 3px solid brown;
+}
+button:hover {
+    color:#007BFF; 
+    transform: scale(1.1);
+}
+        .chatbot-icon img {
+             width: 30px;
+            height: 30px;
+        }
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            padding: 20px;
+            overflow: auto;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .container{
+            background-color: rgb(248, 49, 49); 
+            color:orange; 
+            padding:0;
+                }
+        .lower{
+        background-color: white; 
+        color: #007BFF; 
+        float:right; 
+        margin:0; 
+        padding:20; 
+        width:100%;
+        }
+        body{
+            background-color: white;
+        }
+        @media only screen and (max-width:400px) {
+            .body{
+                background-color:white;
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                background-color: white;
+            }
+            .container img{
+                height: 50px;
+                width: 40px;
+            }
+            .container #p{
+                font-size: 50px !important;
+                text-shadow: 2px 1px 1px black;
+            }
+            .pbar{
+                height: 20px;
+                width: 20px;
+            }
+            .lower{
+                background-color: white;
+            }
+        }
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100; /* Ensure hamburger is always on top */
+        }
+
+        .line {
+            height: 4px;
+            background-color: black;
+            width: 100%;
+            border-radius: 2px;
+        }
+
+        /* Menu */
+        .menu {
+            display: none; /* Initially hide the menu */
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 25%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+            color: white;
+            padding-top: 60px;
+            z-index: 99; /* Menu should be below hamburger */
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .menu ul li {
+            margin: 6px 0;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Animation for showing the menu */
+        .menu.show {
+            display: block;
+            animation: slideIn 0.8s ease-in-out;
+        }
+
+        /* Slide-in animation */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0%);
+            }
+        }
+        /* Hamburger to 'X' icon (optional animation) */
+        .hamburger-menu.active .line:nth-child(1) {
+            transform: rotate(35deg);
+            top: 20px;
+            background-color: white;
+        }
+
+        .hamburger-menu.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active .line:nth-child(3) {
+            transform: rotate(150deg);
+            top: 8px;
+            background-color: white;
+                   
+        }
+        .pbar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 10px;
+            justify-content: right;
+            padding: 8px 15px;
+            margin-right: 10px;
+            text-decoration: none;
+            margin-top: -5%;
+        }
+
+        .pbar button {
+            color: white;
+            background-color: orange;
+            height: 60px;
+            width: 150px;
+            border-radius: 25px;
+            border: none;
+            padding: 8px;
+            margin: 0;
+            font-size: 20px;
+            font-family: "Playfair Display", serif;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: 700;
+        }
+
+        .pbar button:hover {
+            background-color: darkorange;
+            transform: scale(1.05);
+        }
+            .chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f2c94c;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .scrolling-text {
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .scrolling-text span {
+            display: inline-block;
+            animation: scroll 10s linear infinite;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .WhatsApp{
+            font-size: 32px;
+            /* font-family:'Noto Serif', serif; */
+            font-family: 'Old Standard TT', serif;
+            color: #1f9a23;
+            font-weight:500;
+            word-spacing: -2px;
+            margin-top: 1%;
+        }
+        body {
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff0078;
+            color: white;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-image: url('Untitled3.png');
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            
+        }
+
+        .images-container img {
+            width: 280px;
+            height: 350px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .images-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            
+        }
+
+        .button-container button {
+            background-color: #FF9800;
+            border: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px 30px;
+            margin: 15px 0;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 250px;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container button:hover {
+            background-color: #ff5722;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .marquee-container {
+            background-color: #007BFF;
+            color: #212121;
+            font-size: 26px;
+            font-weight: 600;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        marquee {
+            font-family: 'Oswald', sans-serif;
+            font-size: 26px;
+            font-weight: bold;
+            color: #212121;
+        }
+
+        .order-now {
+            position: fixed;
+            bottom: 80px;
+            right: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .order-now:hover {
+            color: black;
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        .chatbot-icon {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: rgb(252, 186, 64);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .chatbot-icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        body {
+            background-image: url('reservation1.png');
+            background-repeat: repeat;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            margin-bottom: 13%;
+        }
+        df-messenger {
+            --df-messenger-button-titlebar-color: #ffc107;
+            --df-messenger-chat-background-color: #fff8e1;
+            --df-messenger-font-color: #000;
+            --df-messenger-user-message: #f5f5f5;
+            position: fixed; /* fixed is better for bottom-right placement */
+            bottom: 20px;
+            right: 20px;
+            z-index: 0;
+            width: 300px;
+            height: 500px;
+          }

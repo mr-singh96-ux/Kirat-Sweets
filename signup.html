@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="image/x-icon">
+    <title>Signup-Kirat Sweets And Dairy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.0/firebase-analytics.js"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 50px;
+            font-family: 'Lato', sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            width: 70%;
+            height: 100%;
+            background-color: white;
+            border: 4px double #ee0653;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-top: 40px;
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        span {
+            color: #ee0653;
+        }
+        nav button {
+            text-decoration: none;
+            text-transform: capitalize;
+            color: #007BFF;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 0 5px;
+            margin: 10px;
+            position: relative;
+        }
+        nav button:hover {
+            color: blue;
+        }
+        nav button:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #ee0653;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        nav button:hover::before {
+            transform: scaleX(1);
+        }
+        input {
+            height: 30px; /* Increased height for better usability */
+            width: 100%;
+            max-width: 400px; /* Max width for better responsiveness */
+            border: 3px solid orange;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .checkbox-container input {
+            margin: 0;
+            background-color: #007BFF; /* Modern browsers support this */
+        }
+        button {
+            height: 40px;
+            width: 150px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .login-btn {
+            background-color: #ee0653;
+            color: white;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        .login-btn:hover {
+            background-color: #d00538;
+        }
+        .cancel-btn {
+            background-color: white;
+            color: #007BFF;
+            border: 2px solid black;
+        }
+        .cancel-btn:hover {
+            background-color: #f0f0f0;
+        }
+        #signout-button {
+    display: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #007BFF;
+    background-color: white; 
+    color: #007BFF; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <script>
+        function navigateTo(page) { window.location.href = page; }
+    </script>
+    <div class="container">
+        <img src="Kirat Sweets And Dairy Logo.jpeg" alt="Kirat Sweets and Dairy Logo" class="logo">
+        <form id="signup-form"><input type="text" placeholder="Name*" required><input type="text" placeholder="Mobile No.*" required><br><input type="text" placeholder="Your Email Id*" id="signup-email" required><input type="password" id="signup-password" placeholder="Your Password*" required><br><input type="text" placeholder="State*" required><input type="text" placeholder="City*" required><br>
+            <!-- <input type="number" placeholder="OTP*" required> -->
+    <div style="display: flex; justify-content: center;"><button type="submit" class="login-btn">Register Now</button><button type="button" class="cancel-btn" onclick="navigateTo('home.html')">Cancel</button></div></form>
+    <button id="signout-button" style="display:none;">Sign Out</button>
+    <div id="user-info" style="margin-top: 20px;"></div>    
+    <p>Already have an Account!<a href="https://mr-singh96-ux.github.io/Kirat-Sweets-and-Dairy/login.html">Login</a></p>
+    </div>
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-analytics.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBag3dZ3-Ivgq1etvwvIzH2qMEUNo0dvMw",
+            authDomain: "kirat-sweets-and-dairy-9c93a.firebaseapp.com",
+            projectId: "kirat-sweets-and-dairy-9c93a",
+            storageBucket: "kirat-sweets-and-dairy-9c93a.appspot.com",
+            messagingSenderId: "808992124173",
+            appId: "1:808992124173:web:92bd3699922d806fc79444",
+            measurementId: "G-6HEHSTGF87"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+
+        // Sign Up function
+        function signUp(email, password) {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log("User signed up: ", user);
+                    window.location.href = 'home.html';
+                })
+                .catch((error) => {
+                    console.error("Error signing up: ", error);
+                });
+        }
+     // Sign Out function
+        function signOutUser() {
+        signOut(auth).then(() => {
+            console.log("User signed out");
+        }).catch((error) => {
+            console.error("Error signing out: ", error);
+        });
+    }
+
+        // Monitor Auth State
+        onAuthStateChanged(auth, (user) => {
+        const userInfo = document.getElementById('user-info');
+        const signOutButton = document.getElementById('signout-button');
+
+        if (user) {
+            userInfo.textContent = `User is signed in: ${user.email}`;
+            signOutButton.style.display = 'inline'; // Show sign-out button
+        } else {
+            userInfo.textContent = 'No user is signed in.';
+            signOutButton.style.display = 'none'; // Hide sign-out button
+        }
+    });
+
+        // Handle Form Submissions
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('signup-email').value;
+        const password = document.getElementById('signup-password').value;
+        signUp(email, password);
+    });
+    document.getElementById('signout-button').addEventListener('click', function() {
+        signOutUser();
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Kirat Sweets And Dairy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Ga+Maamli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Ga+Maamli&family=Itim&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Ga+Maamli&family=Irish+Grover&family=Itim&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Spicy+Rice&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fredoka:wght@300..700&family=Gowun+Batang:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style6.css">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .image-container {
+            width: 100%;
+            display: flex;
+            justify-content: top;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .kbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: right;
+            align-items: right;
+            padding: 10px;
+        }
+
+        .kbar button {
+            color: orange;
+            border: 3px solid orange;
+            padding: 8px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            height: 50px;
+            width: 100px;
+            position: relative;
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1;
+            font-family: "Old Standard TT", serif;
+            font-weight: bold;
+        }
+
+        .kbar button:hover {
+            background-color: orange;
+            color: white;
+            transform: scale(1.2);
+        }
+
+        .kbar button:before {
+            transition: 0.35s all ease;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            opacity: 0;
+            content: "";
+            background-color: orange;
+            border: 3px solid white;
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .kbar button:hover:before,
+        .kbar button:focus:before {
+            transition: 0.5s all ease;
+            left: 0;
+            right: 0;
+            opacity: 1;
+        }
+
+        .b {
+            border: 1px solid black;
+            border-radius: 20px;
+            position: absolute;
+            top: 30%;
+            left: 23%;
+            text-align: left;
+            color: white;
+            background-color: rgb(31, 30, 30);
+            padding: 10px;
+            font-size: 30px;
+            display: flex;
+            align-items: top;
+        }
+
+        .text-container {
+            margin-top: 63px;
+            margin-left: 0;
+            padding: 0;
+        }
+        table {
+            font-family: Merriweather, serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 25px;
+            color: white;
+            height: 500px;
+            width: 800px;
+            margin-left: 25%;
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 20px;
+            border-right: 2px solid white;
+            min-height: 1000px;
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        .table-row {
+            border-bottom: 2px solid white;
+
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        #buttonContainer {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+            margin-right: 23%;
+        }
+
+        #t {
+            padding: 10px;
+            font-size: 20px;
+            background-color: yellow;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-family: "Old Standard TT", serif;
+            ;
+        }
+
+        #t:hover {
+            background-color: #f2c94c;
+            transform: scale(1.05);
+        }
+
+        .ticket {
+            margin-top: 20px;
+            padding: 10px;
+            border: 5px solid yellow;
+            background-color: aqua;
+            width: 250px;
+            height: 250px;
+            margin-left: 41%;
+            display: flex;
+        }
+
+        #qrcode {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            height: 260px;
+            width: 260px;
+            margin-left: 40%;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="menu" id="menu">
+        <button id="closeBtn" style="display: none;">✕</button>
+        <div id="user-circle" 
+                    style="display:none; margin-top: 20px;  margin-left: 37%;  background-color: #00e6e4; color: black; width: 60px; height: 60px; border-radius: 50%; font-size: 30px; justify-content: center; align-items: center; text-align: center; padding: 5px; line-height: 52px;"><span id="user-initial"></span></div>
+        <!-- User Info Dropdown -->
+        <div id="user-info"
+            style="display:none; position: absolute; top: 25%; right: 13px; background-color: #fff; border: 1px solid #ccc; padding: 10px; border-radius: 8px; width: 200px;">
+            <p><strong style="color: black;">Name:</strong> <span id="user-name" style="color: black;"></span></p>
+            <p><strong style="color: black;">Email:</strong> <span id="user-email" style="color: black;"></span></p>
+            <button id="logout"
+                style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Sign
+                Out</button>
+        </div>
+        <ul>
+            <div class="pbar">
+                <li><button id="sign-in" onclick="navigateTo('login.html')">Sign-In</button></li>
+                <li><button id="sign-up" onclick="navigateTo('signup.html')">Sign-Up</button></li>
+                <li><button onclick="navigateTo('home.html')">Home</button>
+                <li><button onclick="navigateTo('about.html')">About Us</button>
+                <li><button onclick="navigateTo('menu.html')">Menu</button>
+                <li><button onclick="navigateTo('blogs.html')">Blogs</button>
+                <li><button onclick="navigateTo('online_order.html')">Delivery</button>
+                <li><button onclick="navigateTo('reservations.html')">Dine-In</button>
+                <li><button onclick="navigateTo('gallery.html')">Gallery</button>
+                <li><button onclick="navigateTo('contact.html')">Contact Us</button>
+                    <li><button onclick="window.location.href='https://kirat-sweets-blog.onrender.com/'">Feedback</button>
+                <li><button onclick="navigateTo('faq.html')">FAQ's</button>
+                    
+            </div>
+        </ul>
+    </nav>
+    <!-- <div class="kbar">
+        <button onclick="navigateTo('home.html')">Home</button>
+        <button onclick="navigateTo('reservations.html')">Book A Table</button>
+    </div> -->
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+    <div class="image-container">
+        <img alt="zomato live background hoarding"
+            src="https://b.zmtcdn.com/data/o2_assets/fb09c135b5657328d1265b9f20b618121722348124.png"></img>
+        <p
+            style="position:absolute; top: 0; left: 13%; font-size: 45px;color: white; margin: 0; padding: 0; font-family:Anton SC, sans-serif;">
+            Momentum<br>
+            <font
+                style="text-align:center; position:absolute; top: 40%; left: 5%; font-size: 75px;color: magenta; font-family:Irish Grover, system-ui; font-weight: 600;">
+                Un<font style="color: greenyellow;">i</font>te
+        </p>
+        </font>
+        <div class="b">
+            <div class="text-container">
+                <p
+                    style="color: white; font-size: 50px; font-family: Alegreya, serif;font-optical-sizing: auto;font-weight:bold; margin: 0; letter-spacing: -3px; word-spacing: 1px; margin-right: 10px; ">
+                    DILJIT DOSANJH</p>
+                <p
+                    style="color: white; font-size: 20px; font-optical-sizing: auto;font-weight:500; padding: 0; margin: 10px; font-family: Barlow Condensed, sans-serif;">
+                    &#x1F4C6;26 October Onwards</p>
+                <p
+                    style="color: white; font-size: 20px; font-optical-sizing: auto;font-weight:500; padding: 0; margin: 10px; font-family: Barlow Condensed, sans-serif;">
+                    &#x1F4CC;Multiple Cities</p>
+            </div><iframe width="490" height="275"
+                src="https://b.zmtcdn.com/data/file_assets/cdc1bb6ebe482846127a47901fcc41f71725447484.mp4"
+                frameborder="" allow="autoplay; encrypted media; repeat" style="border-radius: 15px;"></iframe>
+        </div>
+    </div>
+    <p
+        style="text-align: center; color: white; font-size: 80px; margin-top: 23%; font-family:Gowun Batang, serif; font-weight: 600; margin-left: 5%; margin-bottom: 1%; margin-top: 30%;">
+        Event Host Locations</p>
+
+    <table>
+        <tr class="table-row">
+            <th style="padding:10px; text-align:center; vertical-align: middle;"><span style="color: white;">Delhi
+                    NCR<br>27 Oct</span><br>
+                <img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/02/India-Gate.jpg"
+                    onclick="initiatePayment('Delhi NCR', '27 Oct')" style="height: 150px; width: 200px;">
+            </th>
+            <th style="padding: 10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Hyderabad<br>15 Nov</span><br>
+                <img src="https://voiceofadventure.com/wp-content/uploads/2021/03/Hyderabad-feature.jpg"
+                    onclick="initiatePayment('Hyderabad', '15 Nov')" style="height: 150px; width: 200px;">
+            </th>
+            <th style="padding: 10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Ahmedabad<br>17 Nov</span><br>
+                <img src="https://www.tripsavvy.com/thmb/18jukZwmonkaOB7Gk2t_ua9GDYQ=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/sidi-bashir-mosque-in-ahmedabad-1322198135-18dddfc8f76e4a2f8cbce7d522ad4cb7.jpg"
+                    onclick="initiatePayment('Ahmedabad', '17 Nov')" style="height: 150px; width: 200px;">
+            </th>
+        </tr>
+
+        <tr class="table-row">
+            <th style="padding:10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Lucknow<br>22 Oct</span><br>
+                <img src="https://th.bing.com/th/id/R.f45ef37ed528c19cfac7b473188c94d9?rik=Ky4E9ShXtZkW5A&riu=http%3a%2f%2fdontgetserious.com%2fwp-content%2fuploads%2f2016%2f08%2flucknow-is-beautiful.jpg&ehk=Wc5XKX%2f8Oq3IvhCXXnr%2b41vyTA35BbV2q%2bC2WKMLUXM%3d&risl=&pid=ImgRaw&r=0"
+                    onclick="initiatePayment('Lucknow', '22 Oct')" style="height: 150px; width: 200px;">
+            </th>
+            <th style="padding: 10px; text-align:center; vertical-align: middle;"><span style="color: white;">Pune<br>24
+                    Nov</span><br>
+                <img src="https://punetourism.co.in/images/places-to-visit/headers/shaniwar-wada-pune-tourism-entry-fee-timings-holidays-reviews-header.jpg"
+                    onclick="initiatePayment('Pune', '24 Nov')" style="height: 150px; width: 200px;">
+            </th>
+            <th style="padding: 10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Kolkata<br>30 Nov</span><br>
+                <img src="https://www.tripsavvy.com/thmb/8PVnyWYgDiCNuEphJDsNSUcZDrs=/3783x2453/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-515828728-5b923ad9c9e77c0050daf70a.jpg"
+                    onclick="initiatePayment('Kolkata', '30 Nov')" style="height: 150px; width: 200px;">
+            </th>
+        </tr>
+
+        <tr class="table-row" style="display: none;" id="ridden">
+            <th style="padding:10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Bengluru<br>6 Dec</span><br>
+                <img src="https://deih43ym53wif.cloudfront.net/bangalore-india-shutterstock_662210488_ac0dd8543d.jpeg"
+                    onclick="initiatePayment1('Bengluru', '6 Dec')" style="height: 150px; width: 200px;">
+            </th>
+            <th style="padding: 10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Indore<br>8 Dec</span><br>
+                <img src="https://www.tripsavvy.com/thmb/RXW5mxzNkojyJCLwjbv0UPtbpEo=/3371x2247/filters:no_upscale():max_bytes(150000):strip_icc()/rajwada-palace--indore-1047693320-a72916554f914572931d3050be9fb944.jpg"
+                    onclick="initiatePayment1('Indore', '8 Dec')" style="height: 150px; width: 200px;">
+            </th>
+            <th style="padding: 10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Chandigarh<br>14 Dec</span><br>
+                <img src="https://th.bing.com/th/id/R.1a602cc90edcb0801d1df57c198ad0e5?rik=cZe5spF6HTLOrQ&riu=http%3a%2f%2fimages.faena.com%2fwp-content%2fuploads%2fsites%2f4%2f2017%2f06%2fchandigarh-51.jpg&ehk=M%2fJCi2Cnc4x%2fdkT3c%2fHO1ShUrNccHm24%2bOeVnnhUhU8%3d&risl=&pid=ImgRaw&r=0"
+                    onclick="initiatePayment1('Chandigarh', '14 Dec')" style="height: 150px; width: 200px;">
+            </th>
+        </tr>
+
+        <tr class="table-row" style="display: none;" id="ridden">
+            <th style="padding:10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Guwahati<br>29 Dec</span><br>
+                <img src="https://mediaim.expedia.com/destination/1/6d10a842eccd77f51a2b4b36b500fc3a.jpg"
+                    onclick="initiatePayment1('Guwahati', '29 Dec')" style="height: 150px; width: 200px;">
+            </th>
+            <th style="padding: 10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Mumbai<br>31 Dec</span><br>
+                <img src="https://www.mistay.in/travel-blog/content/images/2021/07/Roam-around-7-Historcial-Monuments-of-Mumbai--Gateway-of-India-I-Mistay.jpeg"
+                    onclick="initiatePayment1('Mumbai', '31 Dec')" style="height: 150px; width: 200px;">
+            </th>
+            <th style="padding: 10px; text-align:center; vertical-align: middle;"><span
+                    style="color: white;">Jaipur<br>3 Dec</span><br>
+                <img src="https://www.tripsavvy.com/thmb/Afl1v6bgmGid9kPfseymDiAYWa0=/3595x2397/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-518387310-04a30994bfb1461bb8000f1864ca1fc5.jpg"
+                    onclick="initiatePayment1('Jaipur', '3 Dec')" style="height: 150px; width: 200px;">
+            </th>
+        </tr>
+    </table>
+    <div id="buttonContainer"><button id="t">Show More</button></div>
+    <div id="qrcode" style="display:none;"></div>
+
+    <p id="uploadMsg"></p>
+
+
+    <p
+        style="background-color: orange; height: 50px; width: 100%; color:white ; margin-bottom: 0; font-size: 38px; padding: 8px; font-family:Fredoka, sans-serif; font-weight:550;">
+        <marquee behaviour="scroll" direction="left">Contact For More Details:<a
+                href="E-mail:kiratsweetsanddairy@gmail.com"> kiratsweetsanddairy@gmail.com.</a></marquee>
+    </p>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <df-messenger intent="WELCOME" chat-title="SweetBot" agent-id="3a074787-2f24-469a-91ff-6adc0e24cfc8"
+        language-code="en"></df-messenger>
+
+    <script>
+        let isExpanded = false;
+
+        document.getElementById('t').addEventListener('click', function () {
+            const hiddenRows = document.querySelectorAll('tr[style="display: none;"]');
+            hiddenRows.forEach(row => {
+                row.style.display = 'table-row';
+            });
+            this.style.display = 'none';
+            document.getElementById('showless').style.display = 'inline';
+            isExpanded = true;
+        });
+        document.getElementById('showless').addEventListener('click', function () {
+            const visibleRows = document.querySelectorAll('tr:not([style*="display: none"])');
+            visibleRows.forEach(row => {
+                row.style.display = 'none';
+            });
+            document.getElementById('t').style.display = 'inline';
+            this.style.display = 'none';
+            isExpanded = false;
+        });
+    </script>
+    <script>
+        function generateOrderId() {
+            return 'KSD-' + Math.floor(100000 + Math.random() * 900000);
+        }
+
+        function initiatePayment(city, eventDate) {
+            const name = prompt("Enter your name:");
+            const mobile = prompt("Enter your mobile number:");
+            const age = prompt("Enter your age:");
+            const email = prompt("Enter your email:");
+
+            if (!name || !mobile || !age) {
+                alert("❗ Please enter all required fields.");
+                return;
+            }
+
+            const orderId = generateOrderId();
+            const upiLink = `upi://pay?pa=kamaldeepkaurmani@okicici&pn=Kirat%20Sweets&am=1.00&cu=INR&tr=${orderId}&tn=Kirat%20Event`;
+
+            window.userInfo = { name, mobile, age, email, city, eventDate, orderId };
+
+            // Generate QR Code
+            const qrDiv = document.getElementById("qrcode");
+            qrDiv.innerHTML = "";
+            $(qrDiv).qrcode(upiLink);
+            qrDiv.style.display = "block";
+
+            setTimeout(() => {
+                const txnId = prompt("✅ After payment, please enter your UPI Transaction ID:");
+                if (txnId) {
+                    submitOrder(txnId);
+                } else {
+                    alert("⚠️ Transaction ID is required to complete booking.");
+                }
+            }, 4000);
+        }
+
+        function submitOrder(txnId) {
+            const formData = new FormData();
+            const info = window.userInfo;
+            formData.append("orderId", info.orderId);
+            formData.append("name", info.name);
+            formData.append("mobile", info.mobile);
+            formData.append("age", info.age);
+            formData.append("email", info.email || "");
+            formData.append("city", info.city);
+            formData.append("date", info.eventDate);
+            formData.append("txnId", txnId);
+            formData.append("timestamp", new Date().toISOString());
+            formData.append("status", "Pending");
+
+            fetch("https://script.google.com/macros/s/AKfycbzFdsN3HSyjFko6DYm5htDC5IVZZeFFFftDZxg020yUtuf_v9VDNLmNRPMR9ijBbtsJ/exec", {
+                method: "POST",
+                body: formData
+            }).then(res => res.text()).then(msg => {
+                const msgBox = document.getElementById("uploadMsg");
+                msgBox.innerText = "✅ Booking submitted! Order pending verification.";
+                msgBox.style.color = "#00FFAA"; // Neon green/teal
+                msgBox.style.background = "#222"; // Subtle dark background
+                msgBox.style.padding = "10px 20px";
+                msgBox.style.borderRadius = "8px";
+                msgBox.style.marginTop = "15px";
+                msgBox.style.fontWeight = "600";
+                msgBox.style.fontSize = "1rem";
+                msgBox.style.textAlign = "center";
+                msgBox.style.transition = "opacity 0.5s ease";
+                msgBox.style.opacity = "1";
+            }).catch(err => {
+                alert("❌ Something went wrong.");
+                console.error(err);
+            })
+        };
+    </script>
+
+    <script src="mainmenu.js"></script>
+    <script type="module">
+        // Firebase Authentication Setup
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBag3dZ3-Ivgq1etvwvIzH2qMEUNo0dvMw",
+            authDomain: "kirat-sweets-and-dairy-9c93a.firebaseapp.com",
+            projectId: "kirat-sweets-and-dairy-9c93a",
+            storageBucket: "kirat-sweets-and-dairy-9c93a.appspot.com",
+            messagingSenderId: "270432947177",
+            appId: "1:270432947177:web:4d8c6f601282098ae4e631",
+            measurementId: "G-4M5NGKY9PH"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Listen for authentication state changes
+        onAuthStateChanged(auth, (user) => {
+            const userCircle = document.getElementById("user-circle");
+            const userInitialElement = document.getElementById("user-initial");
+            const userInfo = document.getElementById("user-info");
+            const signInButton = document.getElementById("sign-in");
+            const signUpButton = document.getElementById("sign-up");
+
+            if (user) {
+                // Get the user's name from the displayName (if available), otherwise use a fallback
+                const userName = user.displayName || user.email.split('@')[0];  // Default to the part of email before '@'
+                const userEmail = user.email;  // Get the user's email
+
+                // Generate initials from the name
+                const userInitial = userName.charAt(0).toUpperCase() + (userName.charAt(userName.length - 1) || '').toUpperCase();
+
+                userInitialElement.textContent = userInitial;  // Set the user initials
+                userCircle.style.display = 'block';  // Show the user circle
+                userInfo.style.display = 'none'; // Hide user info until circle is clicked
+                userCircle.onclick = function () {
+                    // Toggle the visibility of user info when circle is clicked
+                    if (userInfo.style.display === 'none') {
+                        userInfo.style.display = 'block';
+                    } else {
+                        userInfo.style.display = 'none';
+                    }
+                };
+
+                // Set the user's name and email in the user info
+                document.getElementById('user-name').textContent = userName;  // Set the user name
+                document.getElementById('user-email').textContent = userEmail;  // Set the user email
+
+                // Hide sign-in and sign-up buttons when logged in
+                signInButton.style.display = "none";
+                signUpButton.style.display = "none";
+            } else {
+                // Hide the user circle when not logged in
+                userCircle.style.display = 'none';
+
+                // Show sign-in and sign-up buttons when not logged in
+                signInButton.style.display = "inline-block";
+                signUpButton.style.display = "inline-block";
+            }
+        });
+
+        // Function to log out
+        function logout() {
+            signOut(auth).then(() => {
+                console.log("User signed out");
+                window.location.href = 'home.html'; // Optional: Redirect after sign-out
+            }).catch((error) => {
+                console.error("Error signing out: ", error);
+            });
+        }
+
+        // Add logout functionality when page loads
+        window.onload = () => {
+            const logoutButton = document.getElementById("logout");
+            if (logoutButton) {
+                logoutButton.addEventListener("click", logout); // Add event listener to logout button
+            }
+        };
+    </script>
+
+</body>
+
+</html>

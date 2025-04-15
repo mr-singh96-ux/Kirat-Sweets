@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bokor&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <title>Gallery-Kirat Sweets And Dairy</title>
+    <link rel="stylesheet" href="style8.css">
+    <style>
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            box-shadow: 0 0 10px #fff;
+        }
+
+        /* Next/Previous buttons */
+        .lightbox-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Add space between gallery items */
+        .gallery-item {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="menu" id="menu">
+        <button id="closeBtn" style="display: none;">✕</button>
+        <ul>
+            <div id="user-circle"
+                style="display:none; margin-top: 20px; margin-left: 37%; background-color: #00c9c8; color: black; width: 60px; height: 60px; border-radius: 50%; font-size: 30px; justify-content: center; align-items: center; text-align: center; padding: 5px; font-family: Old Standard TT, serif; line-height: 55px; margin-bottom: 2%;">
+                <span id="user-initial"></span></div>
+            <!-- User Info Dropdown -->
+            <div id="user-info"
+                style="display:none;  margin-top: 3%; margin-left: 35%; background-color: #fff; border: 1px solid #ccc; padding: 5px; border-radius: 8px; width: 220px;">
+                <p><strong style="color: black;">Name:</strong> <span id="user-name" style="color: black;"></span></p>
+                <p><strong style="color: black;">Email:</strong> <span id="user-email" style="color: black;"></span></p>
+                <button id="logout"
+                    style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Sign
+                    Out</button>
+            </div>
+            <div class="pbar">
+                <li><button id="sign-in" onclick="navigateTo('login.html')">Sign-In</button></li>
+                <li><button id="sign-up" onclick="navigateTo('signup.html')">Sign-Up</button></li>
+                <li><button onclick="navigateTo('home.html')">Home</button>
+                <li><button onclick="navigateTo('about.html')">About Us</button>
+                <li><button onclick="navigateTo('menu.html')">Menu</button>
+                <li><button onclick="navigateTo('blogs.html')">Blogs</button>
+                <li><button onclick="navigateTo('events.html')">Upcoming</button>
+                <li><button onclick="navigateTo('online_order.html')">Delivery</button>
+                <li><button onclick="navigateTo('reservations.html')">Dine-In</button>
+                <li><button onclick="navigateTo('contact.html')">Contact Us</button>
+                    <li><button onclick="window.location.href='https://kirat-sweets-blog.onrender.com/'">Feedback</button>
+                <li><button onclick="navigateTo('faq.html')">FAQ's</button>
+            </div>
+        </ul>
+    </nav>
+    <script>
+        function navigateTo(page) { window.location.href = page; }
+    </script>
+    <div class="text" style="color:white; margin-bottom: 2%; font-family: Bokor, system-ui; font-size: 50px;">Restaurant
+        Gallery</div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://th.bing.com/th/id/OIP.fSP4UQouhDctzaqOS7hyvwHaE8?w=221&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                alt="Restaurant Interior 1" onclick="openLightbox(0)">
+            <div class="description">
+                <h3>Cozy Interior</h3>
+                <p>A warm and inviting space for you to enjoy your meal.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/originals/58/f0/b3/58f0b3a7353ab63940cc4203dd206be5.png"
+                alt="Restaurant Interior 2" onclick="openLightbox(1)">
+            <div class="description">
+                <h3>Elegant Dining</h3>
+                <p>Experience fine dining with a touch of elegance.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="Mithai3.jpeg" alt="Delicious Dish 1" onclick="openLightbox(2)">
+            <div class="description">
+                <h3>Signature Dish</h3>
+                <p>Try our chef's special signature dish, a must-have!</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://thumbs.dreamstime.com/z/mexican-food-vertical-12339019.jpg" alt="Delicious Dish 2"
+                onclick="openLightbox(3)">
+            <div class="description">
+                <h3>Fresh Ingredients</h3>
+                <p>We use only the freshest ingredients in all our dishes.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://th.bing.com/th/id/OIP.fsO8BaRlqRjhso_4kppYWAAAAA?rs=1&pid=ImgDetMain"
+                alt="Event at Restaurant" onclick="openLightbox(4)">
+            <div class="description">
+                <h3>Special Events</h3>
+                <p>Join us for special events and promotions throughout the year.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/originals/43/93/bb/4393bb485cd83f72197b9434817e421d.jpg"
+                alt="Outdoor Seating" onclick="openLightbox(5)">
+            <div class="description">
+                <h3>Outdoor Seating</h3>
+                <p>Enjoy your meal in our beautiful outdoor seating area.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://th.bing.com/th/id/OIP.kI0vgoyFIr7O2UlxQCLWDAAAAA?rs=1&pid=ImgDetMain"
+                alt="Event at Restaurant" onclick="openLightbox(6)">
+            <div class="description">
+                <h3>Chef's Specials</h3>
+                <p>Join us on every weekend to enjoy our Chef's Special menu.</p>
+            </div>
+        </div>
+        <!-- <div class="gallery-item">
+            <img src="https://c8.alamy.com/comp/PJPJWE/wine-pouring-glass-bottle-white-portrait-format-pour-alcohol-PJPJWE.jpg" height = 377px alt="Event at Restaurant" onclick="openLightbox(7)">
+            <div class="description">
+                <h3>Wine Tasting</h3>
+                <p>Come for our special wine tasting event this Saturday.</p>
+            </div>
+        </div> -->
+        <div class="gallery-item">
+            <img src="https://www.shutterstock.com/image-photo/chef-cooking-vegetables-on-pan-600nw-781081099.jpg"
+                alt="Event at Restaurant" onclick="openLightbox(8)">
+            <div class="description">
+                <h3>Cooking Session</h3>
+                <p>Join our special cooking sessions hoisted by chef Sanjeev Kapoor.</p>
+            </div>
+        </div>
+        <!-- <div class="gallery-item">
+            <img src="https://thumbs.dreamstime.com/b/cool-party-22272667.jpg" alt="Event at Restaurant" onclick="openLightbox(9)">
+            <div class="description">
+                <h3>Karaoke Night</h3>
+                <p>Our karaoke nights are hoisted every friday!</p>
+            </div>
+        </div> -->
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/e6/2a/15/e62a1530f891b48d2eb39737f6ed201d.jpg" alt="Event at Restaurant"
+                onclick="openLightbox(10)">
+            <div class="description">
+                <div class="dec1">
+                    <h3>Dance The Night Away!</h3>
+                </div>
+                <div class="dec2">
+                    <p>Dance the night away on our live event!</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://media.istockphoto.com/id/884635392/photo/heres-to-us-and-our-future.jpg?s=612x612&w=0&k=20&c=umyDSeCx-lwYjHpsXTkrP0Kg5bjk7laXtLvFGP47GfA="
+                alt="Event at Restaurant" onclick="openLightbox(11)">
+            <div class="description">
+                <h3>Candle Light Dinner</h3>
+                <p>Treat your special one with a wonderful Candle Light Dinner!</p>
+            </div>
+        </div>
+        <!-- <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/dd/f5/bd/ddf5bd2d544ae090ba90ee38bba7c118.jpg" alt="Event at Restaurant" onclick="openLightbox(12)">
+            <div class="description">
+                <h3>Halloween Party</h3>
+                <p>Join us for our Halloween Party this year!</p>
+            </div>
+        </div> -->
+        <div class="gallery-item">
+            <img src="https://img.freepik.com/free-vector/party-crowd-background-with-glittery-lights_1048-10623.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721865600&semt=ais_user"
+                alt="Event at Restaurant" onclick="openLightbox(13)">
+            <div class="description">
+                <h3>Celebration Time!</h3>
+                <p>Join us to celebrate our 25th Anniversary!</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://media.istockphoto.com/id/540856662/photo/man-playing-the-grand-piano.jpg?s=612x612&w=0&k=20&c=seV7kEr1549kFqM2H99STOhetJftQNtBQh-0yhiVO3c="
+                alt="Event at Restaurant" onclick="openLightbox(14)">
+            <div class="description">
+                <h3>Piano Play</h3>
+                <p>You are free to join us for our special piano play!/p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Lightbox container -->
+    <div id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-image" src="" alt="Large Image">
+        <span class="lightbox-button prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="lightbox-button next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
+</div><script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+<df-messenger intent="WELCOME" chat-title="SweetBot" agent-id="3a074787-2f24-469a-91ff-6adc0e24cfc8"
+    language-code="en"></df-messenger>
+    <script>
+        // List of images in the gallery
+        const images = [
+            "https://th.bing.com/th/id/OIP.fSP4UQouhDctzaqOS7hyvwHaE8?w=221&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+            "https://i.pinimg.com/originals/58/f0/b3/58f0b3a7353ab63940cc4203dd206be5.png",
+            "Mithai3.jpeg",
+            "https://thumbs.dreamstime.com/z/mexican-food-vertical-12339019.jpg",
+            "https://th.bing.com/th/id/OIP.fsO8BaRlqRjhso_4kppYWAAAAA?rs=1&pid=ImgDetMain",
+            "https://i.pinimg.com/originals/43/93/bb/4393bb485cd83f72197b9434817e421d.jpg",
+            "https://www.shutterstock.com/shutterstock/photos/2287174959/display_1500/stock-photo-vertical-image-of-wine-glasses-standing-in-a-line-against-white-background-different-red-white-2287174959.jpg",
+            "https://c8.alamy.com/comp/PJPJWE/wine-pouring-glass-bottle-white-portrait-format-pour-alcohol-PJPJWE.jpg",
+            "https://www.shutterstock.com/image-photo/chef-cooking-vegetables-on-pan-600nw-781081099.jpg",
+            "https://thumbs.dreamstime.com/b/cool-party-22272667.jpg",
+            "https://i.pinimg.com/736x/e6/2a/15/e62a1530f891b48d2eb39737f6ed201d.jpg",
+            "https://media.istockphoto.com/id/884635392/photo/heres-to-us-and-our-future.jpg?s=612x612&w=0&k=20&c=umyDSeCx-lwYjHpsXTkrP0Kg5bjk7laXtLvFGP47GfA=",
+            "https://i.pinimg.com/736x/dd/f5/bd/ddf5bd2d544ae090ba90ee38bba7c118.jpg",
+            "https://img.freepik.com/free-vector/party-crowd-background-with-glittery-lights_1048-10623.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721865600&semt=ais_user",
+            "https://media.istockphoto.com/id/540856662/photo/man-playing-the-grand-piano.jpg?s=612x612&w=0&k=20&c=seV7kEr1549kFqM2H99STOhetJftQNtBQh-0yhiVO3c="
+            // Add other image URLs here
+        ];
+
+        let currentIndex = 0;
+
+        // Open lightbox with the clicked image
+        function openLightbox(index) {
+            currentIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            lightbox.style.display = 'flex';
+            lightboxImage.src = images[currentIndex];
+        }
+
+        // Close lightbox
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Change image in the lightbox (next/previous)
+        function changeImage(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length; // Wrap around the images
+            document.getElementById('lightbox-image').src = images[currentIndex];
+        }
+    </script>
+    <style>
+        .text {
+            font-size: 45px;
+            text-align: center;
+            animation: fade 0.7s infinite alternate;
+
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                scale: 0.4;
+            }
+
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
+        .gallery-item {
+
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+
+        /* cover 40% means element will complete the animation before we reach 40%of the viewport. */
+        .gallery-item:hover {
+            transform: scale(1.09);
+        }
+
+        body {
+            background-image: url('https://img.freepik.com/premium-photo/realistic-photo-blurred-restaurant-background-with-some-people-eating-chefs-waiters-working-high-resolution-superdetail-16k_967785-42160.jpg');
+            background-size: cover;
+
+        }
+    </style>
+    <script src="mainmenu.js"></script>
+    <script>
+        function toggleChatbot() {
+            const modal = document.getElementById('chatbotModal');
+            const overlay = document.getElementById('overlay');
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+                overlay.style.display = "none";
+            } else {
+                modal.style.display = "block";
+                overlay.style.display = "block";
+            }
+        }
+    </script>
+    <script type="module">
+        // Firebase Authentication Setup
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBag3dZ3-Ivgq1etvwvIzH2qMEUNo0dvMw",
+            authDomain: "kirat-sweets-and-dairy-9c93a.firebaseapp.com",
+            projectId: "kirat-sweets-and-dairy-9c93a",
+            storageBucket: "kirat-sweets-and-dairy-9c93a.appspot.com",
+            messagingSenderId: "270432947177",
+            appId: "1:270432947177:web:4d8c6f601282098ae4e631",
+            measurementId: "G-4M5NGKY9PH"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Listen for authentication state changes
+        onAuthStateChanged(auth, (user) => {
+            const userCircle = document.getElementById("user-circle");
+            const userInitialElement = document.getElementById("user-initial");
+            const userInfo = document.getElementById("user-info");
+            const signInButton = document.getElementById("sign-in");
+            const signUpButton = document.getElementById("sign-up");
+
+            if (user) {
+                // Get the user's name from the displayName (if available), otherwise use a fallback
+                const userName = user.displayName || user.email.split('@')[0];  // Default to the part of email before '@'
+                const userEmail = user.email;  // Get the user's email
+
+                // Generate initials from the name
+                const userInitial = userName.charAt(0).toUpperCase() + (userName.charAt(userName.length - 1) || '').toUpperCase();
+
+                userInitialElement.textContent = userInitial;  // Set the user initials
+                userCircle.style.display = 'block';  // Show the user circle
+                userInfo.style.display = 'none'; // Hide user info until circle is clicked
+                userCircle.onclick = function () {
+                    // Toggle the visibility of user info when circle is clicked
+                    if (userInfo.style.display === 'none') {
+                        userInfo.style.display = 'block';
+                    } else {
+                        userInfo.style.display = 'none';
+                    }
+                };
+
+                // Set the user's name and email in the user info
+                document.getElementById('user-name').textContent = userName;  // Set the user name
+                document.getElementById('user-email').textContent = userEmail;  // Set the user email
+
+                // Hide sign-in and sign-up buttons when logged in
+                signInButton.style.display = "none";
+                signUpButton.style.display = "none";
+            } else {
+                // Hide the user circle when not logged in
+                userCircle.style.display = 'none';
+
+                // Show sign-in and sign-up buttons when not logged in
+                signInButton.style.display = "inline-block";
+                signUpButton.style.display = "inline-block";
+            }
+        });
+
+        // Function to log out
+        function logout() {
+            signOut(auth).then(() => {
+                console.log("User signed out");
+                window.location.href = 'home.html'; // Optional: Redirect after sign-out
+            }).catch((error) => {
+                console.error("Error signing out: ", error);
+            });
+        }
+
+        // Add logout functionality when page loads
+        window.onload = () => {
+            const logoutButton = document.getElementById("logout");
+            if (logoutButton) {
+                logoutButton.addEventListener("click", logout); // Add event listener to logout button
+            }
+        };
+    </script>
+</body>
+
+</html>

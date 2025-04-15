@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback-Kirat Sweets And Dairy</title>
+    <link rel="stylesheet" href="style9.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bokor&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bokor&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bokor&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            /* background: linear-gradient(135deg, #f0f4f8 0%, #cce4fd 100%); */
+            /* background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%); */
+            color: #333;
+            line-height: 1.6;
+            /* background-image: url('contact.png'); */
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Global Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            min-height: 100vh;
+        }
+
+        /* Feedback Form Container */
+        .feedback-container {
+            background: #ff0078;
+            border-radius: 20px;
+            padding: 50px 90px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease-out forwards;
+            max-width: 800px;
+            width: 800px;
+        }
+
+        .feedback-container h2 {
+            font-size: 32px;
+            font-weight: 700;
+            /* color: rgb(0, 0, 167); */
+            color: #ffe3ed;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 30px;
+            font-family: "Abril Fatface", serif;
+        }
+
+        .feedback-container input,
+        .feedback-container textarea {
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .feedback-container input:focus,
+        .feedback-container textarea:focus {
+            border-color: red;
+            box-shadow: 0 0 10px rgba(42, 145, 254, 0.3);
+            outline: none;
+        }
+
+        .feedback-container button {
+            background-color: #8368bd;
+            color: white;
+            padding: 16px 35px;
+            font-size: 18px;
+            border: none;
+            border-radius: 35px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .feedback-container button:hover {
+            background-color: #fb4f93;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Reviews Section */
+        .reviews-container {
+            margin: 80px auto;
+            padding: 50px;
+            background-color: #ba9cf5;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-40px);
+            animation: fadeInUp 1.2s ease-out forwards;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .reviews-container h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ff0078;
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: "Abril Fatface", serif;
+            letter-spacing: 2px;
+        }
+
+        .review {
+            background-color: #f9f9f9;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            animation: slideIn 1s ease-out forwards;
+            transform: translateY(20px);
+        }
+
+        .review:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+        }
+
+        .review h3 {
+            font-size: 22px;
+            color: #2a91fe;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .review p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .review button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+        }
+
+        .review button:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: rotate(180deg) translateY(100px); /* Start with a 360-degree rotation */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
+}
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .feedback-container,
+            .reviews-container {
+                padding: 25px;
+                width: 90%;
+            }
+
+            .feedback-container h2,
+            .reviews-container h2 {
+                font-size: 28px;
+            }
+
+            .feedback-container input,
+            .feedback-container textarea,
+            .feedback-container button {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .review h3 {
+                font-size: 20px;
+            }
+
+            .review p {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fredoka:wght@300..700&family=Gowun+Batang:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "C:\Users\Kirti\Desktop\FEE PROJECT\feed.css">
+    </head>
+    <body>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="menu" id="menu">
+            <button id="closeBtn" style="display: none;">✕</button>
+            <ul>
+            <div id="user-circle" 
+                    style="display:none; margin-top: 20px;  margin-left: 38%; margin-top: -1%;  background-color: #ff6600; color: white; width: 60px; height: 60px; border-radius: 50%; font-size: 30px; justify-content: center; align-items: center; text-align: center; padding: 5px; line-height: 52px;"><span id="user-initial"></span></div>
+                <!-- User Info Dropdown -->
+                <div id="user-info" style="display:none; position: absolute; top: 18%; right: 15px; background-color: #fff; border: 1px solid #ccc; padding: 5px; border-radius: 8px; width: 180px;">
+                    <p><strong style="color: black;">Name:</strong> <span id="user-name" style="color: black;"></span></p>
+                    <p><strong style="color: black;">Email:</strong> <span id="user-email" style="color: black;"></span></p>
+                    <button id="logout" style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Sign Out</button>
+                </div>
+                <div class="pbar">
+                    <li><button id="sign-in" onclick="navigateTo('login.html')">Sign-In</button></li>
+                    <li><button id="sign-up" onclick="navigateTo('signup.html')">Sign-Up</button></li>
+                    <li><button onclick="navigateTo('home.html')">Home</button>
+                    <li><button onclick="navigateTo('about.html')">About Us</button>
+                    <li><button onclick="navigateTo('menu.html')">Menu</button>
+                    <li><button onclick="navigateTo('blogs.html')">Blogs</button>
+                    <li><button onclick="navigateTo('events.html')">Upcoming</button>
+                    <li><button onclick="navigateTo('online_order.html')">Delivery</button>
+                    <li><button onclick="navigateTo('reservations.html')">Dine-In</button>
+                    <li><button onclick="navigateTo('gallery.html')">Gallery</button>
+                    <li><button onclick="navigateTo('contact.html')">Contact Us</button>
+                    <li><button onclick="navigateTo('faq.html')">FAQ's</button>
+                </div>
+            </ul>
+            </nav>
+    <div class="container">
+        <!-- Feedback Form -->
+        <div class="feedback-container">
+            <h2>Leave Your Feedback</h2>
+            <form id="feedbackForm" onsubmit="return submitFeedback(event)">
+                <input type="text" id="name" placeholder="Enter Your Name" required><br>
+                <input type="number" id="mobile" placeholder="Enter Your Mobile Number" required><br>
+                <textarea placeholder="Enter Your Feedback" id="feedback" rows="5" required></textarea><br>
+                <button style="font-family: Abril Fatface, serif;" type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Customer Reviews Section -->
+        <div class="reviews-container">
+            <h2>Customer Reviews</h2>
+            <div id="reviews" style="color: black"></div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <df-messenger intent="WELCOME" chat-title="SweetBot" agent-id="3a074787-2f24-469a-91ff-6adc0e24cfc8"
+        language-code="en"></df-messenger>
+</div>
+<script>
+    const OWNER_PASSWORD = "Kirat123@"; // Set your owner password here
+
+    window.onload = function() {
+        const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+        storedReviews.forEach((review, index) => displayReview(review.name, review.feedback, index));
+    };
+
+    function submitFeedback(event) {
+        event.preventDefault(); 
+        const name = document.getElementById('name').value;
+        const feedback = document.getElementById('feedback').value;
+
+        const review = { name: name, feedback: feedback };
+        const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+        storedReviews.push(review);
+        localStorage.setItem('reviews', JSON.stringify(storedReviews));
+
+        displayReview(name, feedback, storedReviews.length - 1);
+        document.getElementById('feedbackForm').reset();
+    }
+
+    function displayReview(name, feedback, index) {
+        const reviewDiv = document.createElement('div');
+        reviewDiv.innerHTML = `
+            <h3>${name}</h3>
+            <p>${feedback}</p>
+            <button style="display:none" onclick="deleteReview(${index})">Delete</button>
+            <hr>`;
+        document.getElementById('reviews').prepend(reviewDiv);
+    }
+
+    function deleteReview(index) {
+        const password = prompt("Enter authority password to delete this review:");
+
+        if (password === OWNER_PASSWORD) {
+            const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            storedReviews.splice(index, 1);
+            localStorage.setItem('reviews', JSON.stringify(storedReviews));
+            document.getElementById('reviews').innerHTML = '';
+            storedReviews.forEach((review, i) => displayReview(review.name, review.feedback, i));
+        } else {
+            alert("Incorrect password!");
+        }
+    }
+
+    function toggleChatbot() {
+        const chatbotModal = document.getElementById('chatbotModal');
+        const overlay = document.getElementById('overlay');
+        const isVisible = chatbotModal.style.display === "block";
+
+        chatbotModal.style.display = isVisible ? "none" : "block";
+        overlay.style.display = isVisible ? "none" : "block";
+    }
+</script>
+<script src="mainmenu.js"></script>
+<script>
+    function navigateTo(page){window.location.href = page;}
+</script>
+</body>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Kirat Sweets and Dairy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+   <style>
+    body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff5f8;
+  color: #333;
+}
+
+.hero {
+  background: linear-gradient(to bottom right, #ff0078, #cd379b, #55569a);
+  color: white;
+  padding: 50px 0 30px;
+  text-align: center;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-top: -2%;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 30px 0 10px;
+}
+
+.hero-text p {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.contact-section {
+  display: flex;
+  padding: 60px 50px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: #fff;
+}
+
+.contact-info, .contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+.map {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border: 5px solid #ff0078;
+  border-radius: 12px;
+}
+
+.map strong {
+  font-family: 'Oswald', sans-serif;
+  color: #8368bd;
+  text-shadow: 1px 3px 3px black;
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+.contact-info h2, .contact-form h2 {
+  color: #ff0078;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+  min-width: none;
+}
+
+.contact-form textarea {
+  min-height: 100px;
+}
+
+.contact-form button {
+  background-color: #ff0078;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  min-width: none;
+}
+
+.contact-form button:hover {
+  background-color: #dc005d;
+}
+df-messenger {
+            --df-messenger-button-titlebar-color: #ffc107;
+            --df-messenger-chat-background-color: #fff8e1;
+            --df-messenger-font-color: #000;
+            --df-messenger-user-message: #f5f5f5;
+            position: fixed; /* fixed is better for bottom-right placement */
+            bottom: 20px;
+            right: 20px;
+            z-index: 0;
+            width: 300px;
+            height: 500px;
+          }
+   </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo"><a href="./home.html"><img src="Logo Contact.png" alt="Kirat Logo" /></a><span>KIRAT SWEETS & DAIRY</span></div>
+      <ul class="nav-links">
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="./menu.html">Menu</a></li>
+        <li><a href="./online_order.html">Delivery</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-text">
+      <h1>Get In Touch</h1>
+      <p>We’d love to sweeten your day. Reach out for inquiries or feedback!</p>
+    </div>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2>CONTACT INFO</h2>
+      <p>Have a craving or a question? Our friendly team is happy to help. Feel free to drop by, call us, or fill out the form!</p>
+      <ul>
+        <li><strong>Address:</strong> Kirat Sweets, Near Chadha Transport, Safabadi Gate, Sirhandi Bazar Rd, Patiala-147001</li>
+        <li><strong>Phone:</strong> +91-8054811888</li>
+        <li><strong>Email:</strong> kiratsweetsanddairy@gmail.com</li>
+      </ul>
+      <div class="map">
+        <strong style="font-family: Oswald, sans-serif; color:#8368bd; text-shadow: 1px 3px 3px black; letter-spacing: 2px; font-size: 40px;">Find Us Here</strong><br><br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29153.73174528779!2d76.4070101!3d30.3291485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391029a9dcc0782f%3A0x14c249d8c49c1943!2sKirat%20Sweets!5e0!3m2!1sen!2sin!4v1694674778907!5m2!1sen!2sin"  style="border:5px solid #ff0078" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>SEND US A RESPONSE</h2>
+      <form action="https://formspree.io/f/xbljkbqj" method="POST">
+        <input type="text" name="name" placeholder="Name" style="border:2px solid #ff0078; " required>
+        <input type="email" name="email" placeholder="E-mail" style="border:2px solid #ff0078; " required>
+        <input type="tel" name="phone" placeholder="Phone" style="border:2px solid #ff0078; " required>
+        <input type="text" name="subject" placeholder="Subject" style="border:2px solid #ff0078; " required>
+        <textarea name="message" rows="5" placeholder="Message" style="border:2px solid #ff0078; " required></textarea>
+        <button type="submit">Send Message</button>
+        </form>
+    </div>
+  </section>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  
+  <df-messenger intent="WELCOME" chat-title="SweetBot" agent-id="3a074787-2f24-469a-91ff-6adc0e24cfc8"
+    language-code="en"></df-messenger>
+</body>
+</html>

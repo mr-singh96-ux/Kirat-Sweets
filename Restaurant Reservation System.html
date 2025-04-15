@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .kbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+        border-top: 4px solid white;
+        border-bottom: 4px solid white;
+        background-color: rgba(0, 1, 44, 0.8);
+    }
+    .kbar button {
+        color: white;
+        background-color: orange;
+        border: none;
+        padding: 10px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .kbar button:hover {
+        background-color: darkorange;
+        transform: scale(1.05);}</style>
+    <title>Kirat Sweets And Dairy</title>
+</head>
+<body>
+    <div style="border:4px solid black; background-color: rgb(0, 1, 44); color:orange; padding:0;">
+        <p style="color: orange; text-align: center; font-size:100px; padding:0; margin:0; position:relative;">
+        <img src="Sikh Boy All is Best.png" alt="sikh boy dancing" height="150px" width="130px" style="vertical-align:middle; left: 0; background-color: black; position:absolute; left:0;">
+        Kirat Sweets And Dairy</p>
+    <p style="position:relative; text-align:center; font-size:30px; margin:0;">Welcome to Kirat Sweets—where every bite is a pure moment of indulgence and joy!</p></div>
+    <div class="kbar">
+    <button onclick="navigateTo('home.html')">Home</button>
+    <button onclick="navigateTo('about.html')">About Us</button>
+    <button onclick="navigateTo('menu.html')">Menu</button>
+    <button onclick="navigateTo('reservations.html')">Book A Table</button>
+    <button onclick="navigateTo('gallery.html')">Gallery</button>
+    <button onclick="navigateTo('blogs.html')">Blogs</button>
+    <button onclick="navigateTo('events.html')">Events</button>
+    <button onclick="navigateTo('contact.html')">Contact Us</button>
+    <button onclick="navigateTo('faq.html')">FAQ</button>
+    <button onclick="navigateTo('feedback.html')">Feedback</button></div>
+    <script>
+        function navigateTo(page){window.location.href = page;}
+    </script>
+    <div style="background-color: rgb(0, 1, 44); color:white; float:right; margin:0; padding:20; width:100%">
+        <img src="burfi.jpg" style="float:right; margin-left:0; width:650px; height: 700px;">
+        <p style="font-size:80px; text-align:left; position:absolute; top:40%; left:10%; margin:0; padding:0;">Enjoy Our<br>Delicious Meal<p style="font-size:25px; text-align:left; position:absolute; top:65%; left:10%; margin:0; padding:0;">At Kirat Sweets, we believe that great sweets start with the<br>highest standards of purity, cleanliness, and hygiene. We source<br>only the finest ingredients to ensure that every treat is as pure as<br>it is delicious. Our kitchen and dining areas are meticulously<br>cleaned and maintained, reflecting our commitment to a spotless<br>environment. Additionally, our staff adhere to strict hygiene<br>practices to guarantee the safety and quality of every confection<br>we serve. Enjoy our delightful desserts with complete peace of<br>mind, knowing that purity and cleanliness are our top priorities.<br>
+            <button style="color:white; background-color:orange; font-size: 15px; width: 142.5px; height:50px;" onclick="navigateTo('reservations.html')">Book A Table</button></p></p>
+    </div>
+</body>
+</html>

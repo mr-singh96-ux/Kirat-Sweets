@@ -1,0 +1,499 @@
+.kbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    background-color: #f8eef7;
+    border-top: 5px solid #ed5e93;
+    border-top-left-radius: 1000px;
+    border-top-right-radius: 1000px;
+    border-bottom: 5px solid #ed5e93;
+    border-bottom-left-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    height: 80px;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 42.5%;
+}
+
+.kbar button {
+    color: rgb(245, 34, 34);
+    margin-top: -20px;
+    padding: 25px;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1;
+    font-family: "Old Standard TT", serif;
+    font-weight: bold;
+    border: white;
+    background-color: transparent;
+}
+
+.kbar button:hover {
+    color: #007BFF;
+    transform: scale(1.1);
+}
+
+/* .kbar button:before {
+transition: 0.35s all ease;
+position: absolute;
+top: 0;
+bottom: 0;
+opacity: 0;
+content: "";
+border: white;
+z-index:-1;
+}
+
+.kbar button:hover:before,
+.kbar button:focus:before {
+transition: 0.5s all ease;
+left: 0;
+right: 0;
+opacity: 1; 
+} */
+.kbar .home.book-a-table::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 195px;
+    height: 140px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 0;
+    color: orange;
+    z-index: -100;
+    border: 2px solid black;
+}
+
+.kbar .home svg {
+    width: 24px;
+    height: 24px;
+    fill: orange;
+    margin-right: 2px;
+    transition: fill 0.3s ease;
+}
+
+.kbar .home:hover svg {
+    fill: rgb(245, 34, 34);
+}
+
+.chatbot-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.chatbot-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    padding: 20px;
+    overflow: auto;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.container {
+    /* background-color: rgb(248, 49, 49);  */
+    background-color: #ff0078;
+    /* background-color: #ed5e93; */
+    color: orange;
+    padding: 0;
+}
+
+.lower {
+    /* color: #007BFF;  */
+    /* color: #3dbea8; */
+    color: #000;
+    /* color: #564145; */
+    /* color: #fff3fa; */
+    float: right;
+    margin: 0;
+    padding: 20;
+    width: 100%;
+}
+
+body {
+    background-color: white;
+    /* background-color: #000000; */
+    /* background-color: #fef6ff; */
+    /* background-color: #f7f5dd; */
+}
+
+.container #WelcomeLine {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    font-family: Ubuntu, sans-serif;
+    padding: 1px;
+    color: yellow;
+    margin-left: 40px;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    padding: 12px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    z-index: 100;
+    /* Ensure hamburger is always on top */
+}
+
+.line {
+    height: 4px;
+    background-color: white;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* Menu */
+.menu {
+    display: none;
+    /* Initially hide the menu */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.836);
+    /* Dark background */
+    color: white;
+    padding-top: 60px;
+    z-index: 99;
+    /* Menu should be below hamburger */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.menu ul li {
+    margin: 6px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+/* Animation for showing the menu */
+.menu.show {
+    display: block;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+/* Hamburger to 'X' icon (optional animation) */
+.hamburger-menu.active .line:nth-child(1) {
+    transform: rotate(35deg);
+    top: 20px;
+    background-color: black;
+}
+
+.hamburger-menu.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .line:nth-child(3) {
+    transform: rotate(150deg);
+    top: 8px;
+    background-color: #000000;
+
+}
+
+.pbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 10px;
+    justify-content: right;
+    padding: 8px 15px;
+    margin-right: 10px;
+    text-decoration: none;
+    margin-top: -5%;
+}
+
+.pbar button {
+    color: white;
+    background-color: orange;
+    height: 60px;
+    width: 150px;
+    border-radius: 25px;
+    border: none;
+    padding: 8px;
+    margin: 0;
+    font-size: 20px;
+    font-family: "Playfair Display", serif;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: 700;
+}
+
+.pbar button:hover {
+    background-color: darkorange;
+    transform: scale(1.05);
+}
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #f2c94c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #f2c94c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+df-messenger {
+    --df-messenger-button-titlebar-color: #ffc107;
+    --df-messenger-chat-background-color: #fff8e1;
+    --df-messenger-font-color: #000;
+    --df-messenger-user-message: #f5f5f5;
+    position: fixed;
+    /* fixed is better for bottom-right placement */
+    bottom: 20px;
+    right: 20px;
+    z-index: 0;
+    width: 300px;
+    height: 500px;
+}
+.image{
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .kbar {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        margin-top: 50%;
+        border-radius: 40px;
+    }
+
+    .kbar button {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .pbar {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .pbar button {
+        width: 100%;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .menu {
+        width: 70%;
+    }
+
+    .menu ul li a {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .container #WelcomeLine {
+        font-size: 20px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .kbar {
+        flex-direction: column;
+        padding: 8px;
+        width: 95%;
+        height: auto;
+        margin-top: 55%;
+    }
+
+    .kbar button {
+        font-size: 16px;
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .container img {
+        height: 50px;
+        width: 40px;
+    }
+
+    .container #p1 {
+        font-size: 30px !important;
+    }
+
+    .hamburger-menu {
+        width: 25px;
+        height: 18px;
+    }
+
+    .line {
+        height: 3px;
+    }
+
+    .menu {
+        width: 80%;
+        padding-top: 50px;
+    }
+
+    .chatbot-icon {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    df-messenger {
+        width: 90%;
+        height: 400px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .lower {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .lower img{
+        display: none;
+    }
+    .kbar{
+        display: none;
+    }
+    .lower #lower{
+        font-size: 50px;
+        margin-top: -30%;
+    }
+    .lower #lower2{
+        font-size: 16px;
+        top: 30%;
+    }
+    .image {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 10px; 
+        height: 100%; 
+        position: relative; 
+    }
+    
+    .image img {
+        width: 100px;
+        height: auto;
+        object-fit: cover;
+        margin-top: 600%;
+    }
+}
+
+@media (max-width: 480px) {
+    .kbar {
+        margin-top: 60%;
+    }
+
+    .kbar button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .pbar button {
+        font-size: 16px;
+        height: 45px;
+    }
+
+    .menu ul li a {
+        font-size: 18px;
+    }
+
+    .container #WelcomeLine {
+        font-size: 18px;
+    }
+
+    .chatbot-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    df-messenger {
+        width: 95%;
+        height: 350px;
+    }
+}
+#lower{
+    font-size:70px; text-align:left; position:absolute; top:30%; left:6%; margin:0; padding:0; color: #00e6e4; font-family: Merriweather, serif; text-shadow: 2px 4px 4px black;
+}
+#lower2{
+    font-size:22px; text-align:left; position:absolute; top:55%; left:6%; margin:0; padding:0; font-family:Playwrite DE Grund;
+}
